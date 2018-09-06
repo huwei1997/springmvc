@@ -1,4 +1,4 @@
-package cap.bean;
+package cap.controller.bean;
 
 public class Admin {
     private String username;

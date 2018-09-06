@@ -1,6 +1,6 @@
-package cap.controller;
+package cap.controller.controller;
 
-import cap.bean.Admin;
+import cap.controller.bean.Admin;
 import com.opensymphony.xwork2.ActionSupport;
 import org.springframework.stereotype.Controller;
 
