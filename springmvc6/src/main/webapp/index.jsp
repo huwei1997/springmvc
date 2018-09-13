@@ -2,5 +2,6 @@
 <html>
 <body>
 <a href="login">登录</a>
+<a href="list">list by page</a>
 </body>
 </html>
