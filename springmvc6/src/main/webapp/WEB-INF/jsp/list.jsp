@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 比你帅的Man
-  Date: 2018/9/13
-  Time: 14:42
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -28,8 +21,8 @@
             <td><c:out value="${admin.id}"/></td>
             <td><c:out value="${admin.username}"/></td>
             <td><c:out value="${admin.password}"/></td>
-            <td><a href="edit?id=${admin.id}">Edit</a></td>
-            <td><a href="del?id=${admin.id}">Delete</a></td>
+            <td><a href="update?id=${admin.id}">Edit</a></td>
+            <td><a href="delete?id=${admin.id}">Delete</a></td>
         </tr>
     </c:forEach>
     <tr>
@@ -41,9 +34,11 @@
             <a
                     href="list?pageNo=${pageBean.getNextPageNo()}">下一页</a>
             <a
-                    href="list?pageNo=${pageBean.getNextPageNo()}">尾页</a>
+                    href="list?pageNo=${pageBean.getBottomPageNo()}">尾页</a>
+            <a href="insert">插入</a>
         </td>
     </tr>
 </table>
+
 </body>
 </html>
