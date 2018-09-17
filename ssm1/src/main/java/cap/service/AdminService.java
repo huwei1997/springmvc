@@ -4,6 +4,7 @@ import cap.model.Admin;
 
 import java.util.List;
 
+import cap.util.PageBean;
 public interface AdminService {
     Admin selectById(Integer id);
 
@@ -14,4 +15,6 @@ public interface AdminService {
     int updateAdmin(Admin admin);
 
     int deleteAdmin(Integer id);
+
+    PageBean findByPage(int pageNo, int pageSize);
 }

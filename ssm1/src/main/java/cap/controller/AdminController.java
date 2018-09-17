@@ -2,6 +2,7 @@ package cap.controller;
 
 import cap.service.AdminService;
 import cap.model.Admin;
+import cap.util.PageBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import java.util.List;
+
+import cap.service.AdminService;
 
 @Controller
 @RequestMapping("/")
@@ -33,5 +36,15 @@ public class AdminController {
             return "redirect:/list";
         else
             return "error";
+    }
+
+    @RequestMapping(value = "/lists", method = RequestMethod.GET)
+    public ModelAndView findByPage(
+            @RequestParam(value = "pageNo", required = true, defaultValue = "1") Integer pageNo) {
+        ModelAndView mv = new ModelAndView();
+        PageBean pageBean = adminService.findByPage(pageNo, 5);
+        mv.addObject("pageBean", pageBean);
+        mv.setViewName("lists");
+        return mv;
     }
 }
